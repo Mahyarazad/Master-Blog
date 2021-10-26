@@ -23,7 +23,7 @@ namespace MB.Infrastructure.Migrations
 
             modelBuilder.Entity("MB.Domain.ArticleCategory", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ArticleId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -37,7 +37,7 @@ namespace MB.Infrastructure.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ArticleId");
 
                     b.ToTable("ArticleCategories", "dbo");
                 });

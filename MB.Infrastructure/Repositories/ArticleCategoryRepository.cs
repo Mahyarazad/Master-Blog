@@ -29,7 +29,7 @@ namespace MB.Infrastructure
 
         public ArticleCategory Get(int id)
         {
-            return _context.ArticleCategories.FirstOrDefault(x => x.Id == id);
+            return _context.ArticleCategories.FirstOrDefault(x => x.ArticleId == id);
         }
 
         public void Save()

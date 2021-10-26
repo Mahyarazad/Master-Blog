@@ -11,7 +11,7 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Id</th>
+                <th>ArticleArticleId</th>
                 <th>Title</th>
                 <th>Status</th>
                 <th>Creation Date</th>
@@ -46,7 +46,7 @@
                                             type="submit" asp-page-handler="Reactivate">
                                         Reactivate
                                     </button>
-                                    <input type="hidden" value="@item.Id" name="Id"/>
+                                    <input type="hidden" value="@item.Id" name="ArticleArticleId"/>
                                 </form>
                             }
                             else
@@ -57,7 +57,7 @@
                                             type="submit" asp-page-handler="Delete">
                                         Delete
                                     </button>
-                                    <input type="hidden" value="@item.Id" name="Id"/>
+                                    <input type="hidden" value="@item.Id" name="ArticleArticleId"/>
                                 </form>
                             }
                         </div>
