@@ -1,0 +1,8 @@
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation\obj\Debug\net5.0\MB.Presentation.csprojAssemblyReference.cache
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation\obj\Debug\net5.0\MB.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation\obj\Debug\net5.0\MB.Presentation.AssemblyInfoInputs.cache
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation\obj\Debug\net5.0\MB.Presentation.AssemblyInfo.cs
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation\obj\Debug\net5.0\MB.Presentation.csproj.CoreCompileInputs.cache
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation\obj\Debug\net5.0\MB.Presentation.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation\obj\Debug\net5.0\MB.Presentation.RazorAssemblyInfo.cache
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation\obj\Debug\net5.0\MB.Presentation.RazorAssemblyInfo.cs

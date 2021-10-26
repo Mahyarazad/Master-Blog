@@ -1,0 +1,12 @@
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\bin\Debug\net5.0\MB.Domain.deps.json
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\bin\Debug\net5.0\MB.Domain.dll
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\bin\Debug\net5.0\ref\MB.Domain.dll
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\bin\Debug\net5.0\MB.Domain.pdb
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\obj\Debug\net5.0\MB.Domain.csprojAssemblyReference.cache
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\obj\Debug\net5.0\MB.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\obj\Debug\net5.0\MB.Domain.AssemblyInfoInputs.cache
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\obj\Debug\net5.0\MB.Domain.AssemblyInfo.cs
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\obj\Debug\net5.0\MB.Domain.csproj.CoreCompileInputs.cache
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\obj\Debug\net5.0\MB.Domain.dll
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\obj\Debug\net5.0\ref\MB.Domain.dll
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\obj\Debug\net5.0\MB.Domain.pdb
