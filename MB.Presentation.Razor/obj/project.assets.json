@@ -1572,6 +1572,37 @@
         "runtime": {
           "bin/placeholder/MB.Infrastructure.dll": {}
         }
+      },
+      "MB.Infrastructure.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "MB.Application": "1.0.0",
+          "MB.Application.Contracts": "1.0.0",
+          "MB.Domain": "1.0.0",
+          "MB.Infrastructure": "1.0.0",
+          "MB.Infrastructure.Query": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MB.Infrastructure.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MB.Infrastructure.Core.dll": {}
+        }
+      },
+      "MB.Infrastructure.Query/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "MB.Domain": "1.0.0",
+          "MB.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MB.Infrastructure.Query.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MB.Infrastructure.Query.dll": {}
+        }
       }
     }
   },
@@ -5860,12 +5891,25 @@
       "type": "project",
       "path": "../MB.Infrastructure/MB.Infrastructure.csproj",
       "msbuildProject": "../MB.Infrastructure/MB.Infrastructure.csproj"
+    },
+    "MB.Infrastructure.Core/1.0.0": {
+      "type": "project",
+      "path": "../MB.Infrastructure.Core/MB.Infrastructure.Core.csproj",
+      "msbuildProject": "../MB.Infrastructure.Core/MB.Infrastructure.Core.csproj"
+    },
+    "MB.Infrastructure.Query/1.0.0": {
+      "type": "project",
+      "path": "../MB.Infrastructure.Query/MB.Infrastructure.Query.csproj",
+      "msbuildProject": "../MB.Infrastructure.Query/MB.Infrastructure.Query.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "MB.Application >= 1.0.0",
       "MB.Application.Contracts >= 1.0.0",
       "MB.Infrastructure >= 1.0.0",
+      "MB.Infrastructure.Core >= 1.0.0",
+      "MB.Infrastructure.Query >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.11"
@@ -5902,6 +5946,15 @@
           "projectReferences": {
             "C:\\Users\\mhyri\\source\\repos\\Master_Bloger\\MB.Application.Contracts\\MB.Application.Contracts.csproj": {
               "projectPath": "C:\\Users\\mhyri\\source\\repos\\Master_Bloger\\MB.Application.Contracts\\MB.Application.Contracts.csproj"
+            },
+            "C:\\Users\\mhyri\\source\\repos\\Master_Bloger\\MB.Application\\MB.Application.csproj": {
+              "projectPath": "C:\\Users\\mhyri\\source\\repos\\Master_Bloger\\MB.Application\\MB.Application.csproj"
+            },
+            "C:\\Users\\mhyri\\source\\repos\\Master_Bloger\\MB.Infrastructure.Core\\MB.Infrastructure.Core.csproj": {
+              "projectPath": "C:\\Users\\mhyri\\source\\repos\\Master_Bloger\\MB.Infrastructure.Core\\MB.Infrastructure.Core.csproj"
+            },
+            "C:\\Users\\mhyri\\source\\repos\\Master_Bloger\\MB.Infrastructure.Query\\MB.Infrastructure.Query.csproj": {
+              "projectPath": "C:\\Users\\mhyri\\source\\repos\\Master_Bloger\\MB.Infrastructure.Query\\MB.Infrastructure.Query.csproj"
             },
             "C:\\Users\\mhyri\\source\\repos\\Master_Bloger\\MB.Infrastructure\\MB.Infrastructure.csproj": {
               "projectPath": "C:\\Users\\mhyri\\source\\repos\\Master_Bloger\\MB.Infrastructure\\MB.Infrastructure.csproj"

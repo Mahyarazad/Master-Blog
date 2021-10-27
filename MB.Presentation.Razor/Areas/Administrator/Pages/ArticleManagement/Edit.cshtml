@@ -15,6 +15,10 @@
                            asp-for="Article.ArticleId"/>
                 </div>
                 <div class="col-md-8">
+                    <input class="col-md-8 border rounded" type="hidden"
+                           asp-for="Article.ArticleCategoryId"/>
+                </div>
+                <div class="col-md-8">
                     <label class="col-md-8 p-0" asp-for="Article.Title"> Title </label>
                     <input class="col-md-8 border rounded" type="text"
                            asp-for="Article.Title"/>

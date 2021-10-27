@@ -33,8 +33,11 @@
     ".NETCoreApp,Version=v5.0": {
       "MB.Presentation.Razor/1.0.0": {
         "dependencies": {
+          "MB.Application": "1.0.0",
           "MB.Application.Contracts": "1.0.0",
           "MB.Infrastructure": "1.0.0",
+          "MB.Infrastructure.Core": "1.0.0",
+          "MB.Infrastructure.Query": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "5.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.11",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.11",
@@ -1366,6 +1369,33 @@
         },
         "compile": {
           "MB.Infrastructure.dll": {}
+        }
+      },
+      "MB.Infrastructure.Core/1.0.0": {
+        "dependencies": {
+          "MB.Application": "1.0.0",
+          "MB.Application.Contracts": "1.0.0",
+          "MB.Domain": "1.0.0",
+          "MB.Infrastructure": "1.0.0",
+          "MB.Infrastructure.Query": "1.0.0"
+        },
+        "runtime": {
+          "MB.Infrastructure.Core.dll": {}
+        },
+        "compile": {
+          "MB.Infrastructure.Core.dll": {}
+        }
+      },
+      "MB.Infrastructure.Query/1.0.0": {
+        "dependencies": {
+          "MB.Domain": "1.0.0",
+          "MB.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "MB.Infrastructure.Query.dll": {}
+        },
+        "compile": {
+          "MB.Infrastructure.Query.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -3757,6 +3787,16 @@
       "sha512": ""
     },
     "MB.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MB.Infrastructure.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MB.Infrastructure.Query/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -10,16 +10,18 @@ namespace MB.Presentation.Razor.Pages
 {
     public class ArticleDetailModel : PageModel
     {
-        private readonly IArticleApplication _articleApplication;
-        public EditArticle Article { get; set; }
-        public ArticleDetailModel(IArticleApplication articleApplication)
+        private readonly IArticleQuery _articleQuery;
+
+        public ArticleDetailModel(IArticleQuery articleQuery)
         {
-            _articleApplication = articleApplication;
+            _articleQuery = articleQuery;
         }
+
+        public ArticleQueryView Article { get; set; }
 
         public void OnGet(int id)
         {
-            Article = _articleApplication.Get(id);
+            Article = _articleQuery.Get(id);
         }
     }
 }

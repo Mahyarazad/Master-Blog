@@ -90,3 +90,7 @@ C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation.Razor\obj\Debug\net5.0
 C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation.Razor\obj\Debug\net5.0\Razor\Areas\Administrator\Pages\ArticleManagement\Create.cshtml.g.cs
 C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation.Razor\obj\Debug\net5.0\Razor\Areas\Administrator\Pages\ArticleManagement\Edit.cshtml.g.cs
 C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation.Razor\obj\Debug\net5.0\Razor\Pages\ArticleDetail.cshtml.g.cs
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation.Razor\bin\Debug\net5.0\MB.Infrastructure.Query.dll
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation.Razor\bin\Debug\net5.0\MB.Infrastructure.Query.pdb
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation.Razor\bin\Debug\net5.0\MB.Infrastructure.Core.dll
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation.Razor\bin\Debug\net5.0\MB.Infrastructure.Core.pdb

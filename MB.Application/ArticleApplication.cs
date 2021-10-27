@@ -33,17 +33,17 @@ namespace MB.Application
             _articleRepository.Save();
         }
 
-        public EditArticle Get(int id)
+        public ArticleViewModel Get(int id)
         {
             var article = _articleRepository.Get(id);
-            return new EditArticle
+            return new ArticleViewModel
             {
-                ArticleId = article.ArticleId,
+                Id = article.ArticleId,
                 Title = article.Title,
                 ShortDescription = article.ShortDescription,
                 PictureUrl = article.PictureUrl,
                 Body = article.Body,
-                ArticleCategoryId = article.ArticleCategoryId,
+                ArticleCategoryId = article.ArticleCategory.ArticleCategoryId,
             };
         }
 

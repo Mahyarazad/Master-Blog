@@ -10,6 +10,8 @@ namespace MB.Application.Contracts.Article
         public string PictureUrl { get; set; }
         public string CreationTime { get; set; }
         public bool IsDeleted { get; set; }
+        public int ArticleCategoryId { get; set; }
         public string ArticleCategory { get; set; }
+        public string Body { get; set; }
     }
 }

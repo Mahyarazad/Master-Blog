@@ -14,7 +14,7 @@ namespace MB.Infrastructure.Mapping
             builder.ToTable("Article", schema: "dbo");
             builder.HasKey(x => x.ArticleId);
             builder.Property(x => x.Title).IsRequired().HasMaxLength(20);
-            builder.Property(x => x.ShortDescription).IsRequired().HasMaxLength(100);
+            builder.Property(x => x.ShortDescription).IsRequired().HasMaxLength(300);
             builder.Property(x => x.Body).IsRequired();
             builder.HasOne(x => x.ArticleCategory).WithMany(x => x.Articles)
                 .HasForeignKey(x => x.ArticleCategoryId);

@@ -1,4 +1,4 @@
-﻿@page 
+﻿@page
 @model IndexModel
 @{
     ViewData["Title"] = "Index";
@@ -22,7 +22,7 @@
                     </div>
                     <div class="post-details">
                         <div class="post-meta d-flex justify-content-between">
-                            <div class="date meta-last">@article.ShortDescription</div>
+                            <div class="date meta-last">@article.CreationTime</div>
                             <div class="category">
                                 <a asp-page="./ArticleDetail" asp-route-id="@article.Id">@article.ArticleCategory</a>
                             </div>
@@ -30,7 +30,7 @@
                         <a asp-page="./ArticleDetail" asp-route-id="@article.Id">
                             <h3 class="h4">@article.Title</h3>
                         </a>
-                        <p class="text-muted">
+                        <p class="text-monospace">
                             @article.ShortDescription
                         </p>
                         <footer class="post-footer d-flex align-items-center">
