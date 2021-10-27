@@ -6,12 +6,12 @@ namespace MB.Application
 {
     public class ArticleApplication : IArticleApplication
     {
-        public ArticleApplication(IArticleRepository<ArticleViewModel> articleRepository)
+        public ArticleApplication(IArticleRepository articleRepository)
         {
             _articleRepository = articleRepository;
         }
 
-        private readonly IArticleRepository<ArticleViewModel> _articleRepository;
+        private readonly IArticleRepository _articleRepository;
 
         public List<ArticleViewModel> GetAll()
         {

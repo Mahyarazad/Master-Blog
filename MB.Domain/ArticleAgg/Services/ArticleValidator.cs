@@ -1,22 +1,20 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 
 namespace MB.Domain.ArticleAgg.Services
 {
     public class ArticleValidator
     {
-        //    private readonly IArticleRepository<ArticleViewModel> _articleRepository;
+        private readonly IArticleRepository _articleRepository;
 
-        //    public ArticleValidator(IArticleRepository<ArticleViewModel> articleRepository)
-        //    {
-        //        _articleRepository = articleRepository;
-        //    }
+        public ArticleValidator(IArticleRepository articleRepository)
+        {
+            _articleRepository = articleRepository;
+        }
 
-        //    public void CheckTheExistance(string title)
-        //    {
-        //        if (_articleRepository.Exist(title))
-        //            throw new DuplicateNameException("This record already exists in database");
-        //    }
-        //}
+        public void CheckTheExistance(string title)
+        {
+            if (_articleRepository.Exist(title))
+                throw new DuplicateNameException("This record already exists in database");
+        }
     }
 }

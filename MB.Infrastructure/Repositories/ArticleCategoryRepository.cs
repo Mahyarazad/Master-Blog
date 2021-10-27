@@ -21,7 +21,7 @@ namespace MB.Infrastructure
 
         public List<ArticleCategory> GetAll()
         {
-            return _context.ArticleCategories.ToList();
+            return _context.ArticleCategories.OrderByDescending(x => x.ArticleCategoryId).ToList();
         }
 
         public ArticleCategory Get(int id)

@@ -1,5 +1,4 @@
 ﻿using System;
-using MB.Domain;
 
 namespace MB.Application.Contracts.Article
 {
@@ -11,6 +10,6 @@ namespace MB.Application.Contracts.Article
         public string PictureUrl { get; set; }
         public string CreationTime { get; set; }
         public bool IsDeleted { get; set; }
-        public ArticleCategory ArticleCategory { get; set; }
+        public string ArticleCategory { get; set; }
     }
 }

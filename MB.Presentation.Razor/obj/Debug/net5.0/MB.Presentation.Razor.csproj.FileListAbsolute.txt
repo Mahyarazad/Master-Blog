@@ -89,3 +89,4 @@ C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation.Razor\obj\Debug\net5.0
 C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation.Razor\obj\Debug\net5.0\Razor\Areas\Administrator\Pages\ArticleManagement\Index.cshtml.g.cs
 C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation.Razor\obj\Debug\net5.0\Razor\Areas\Administrator\Pages\ArticleManagement\Create.cshtml.g.cs
 C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation.Razor\obj\Debug\net5.0\Razor\Areas\Administrator\Pages\ArticleManagement\Edit.cshtml.g.cs
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Presentation.Razor\obj\Debug\net5.0\Razor\Pages\ArticleDetail.cshtml.g.cs

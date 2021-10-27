@@ -1,0 +1,10 @@
+﻿@page "{id:int}"
+@model MB.Presentation.Razor.Pages.ArticleDetailModel
+@{
+}
+
+<div class="jumbotron-fluid">
+    <h6 class="display-4 row p-4 col-12 justify-content-center"> @Model.Article.Title</h6>
+    <img class="row col-12"src="@Model.Article.PictureUrl" alt="@Model.Article.Title" title="@Model.Article.Title"/>
+    <p class="p-4 text-monospace col-12">@Model.Article.Body</p>
+</div>

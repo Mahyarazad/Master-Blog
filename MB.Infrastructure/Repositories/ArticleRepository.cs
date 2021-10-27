@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MB.Infrastructure
 {
-    public class ArticleRepository : IArticleRepository<ArticleViewModel>
+    public class ArticleRepository : IArticleRepository
     {
         private readonly MBContext _mbContext;
 
@@ -31,9 +31,11 @@ namespace MB.Infrastructure
                     Title = x.Title,
                     ShortDescription = x.ShortDescription,
                     PictureUrl = x.PictureUrl,
-                    CreationTime = x.CreationTime.ToString(),
-                    IsDeleted = x.IsDeleted
-                }).ToList();
+                    CreationTime = x.CreationTime.ToString(CultureInfo.CurrentCulture),
+                    IsDeleted = x.IsDeleted,
+                    ArticleCategory = x.ArticleCategory.Title
+                })
+                .OrderByDescending(x => x.Id).ToList();
         }
 
         public Article Get(int id)

@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MB.Infrastructure", "MB.Inf
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MB.Presentation.Razor", "MB.Presentation.Razor\MB.Presentation.Razor.csproj", "{7182B04E-5E05-4707-9929-C20D37F8DAB1}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MB.Infrastructure.Query", "MB.Infrastructure.Query\MB.Infrastructure.Query.csproj", "{5D54F6ED-7168-4011-B1D7-0F328AD8DB0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7182B04E-5E05-4707-9929-C20D37F8DAB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7182B04E-5E05-4707-9929-C20D37F8DAB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7182B04E-5E05-4707-9929-C20D37F8DAB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D54F6ED-7168-4011-B1D7-0F328AD8DB0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D54F6ED-7168-4011-B1D7-0F328AD8DB0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D54F6ED-7168-4011-B1D7-0F328AD8DB0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D54F6ED-7168-4011-B1D7-0F328AD8DB0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

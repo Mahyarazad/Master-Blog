@@ -10,10 +10,10 @@
     <div class="p-0">
         <table class="table table-bordered">
             <thead>
-                <tr>
+                <tr class="text-nowrap">
                     <th>Article Id</th>
                     <th>Title</th>
-                    <th>PictureUrl</th>
+                    <th>Category</th>
                     <th>Status</th>
                     <th>Creation Date</th>
                     <th>Manage</th>
@@ -25,8 +25,8 @@
                 {
                     <tr>
                         <td> @item.Id </td>
-                        <td> @item.Title</td>
-                        <td> @item.PictureUrl</td>
+                        <td scope="row"> @item.Title</td>
+                        <td> @item.ArticleCategory</td>
                         <td>
                             @if (item.IsDeleted)
                             {
