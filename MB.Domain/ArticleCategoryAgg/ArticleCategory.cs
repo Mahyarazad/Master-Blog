@@ -21,7 +21,7 @@ namespace MB.Domain
             Articles = new List<Article>();
         }
 
-        public int ArticleId { get; private set; }
+        public int ArticleCategoryId { get; private set; }
         public string Title { get; private set; }
         public bool IsDeleted { get; private set; }
         public DateTime CreationDate { get; private set; }

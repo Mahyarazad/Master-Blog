@@ -26,7 +26,7 @@ namespace MB.Application
                 articlesViewModel.Add(
                     new ArticleCategoryViewModel
                     {
-                        Id = item.ArticleId,
+                        Id = item.ArticleCategoryId,
                         Title = item.Title,
                         IsDeleted = item.IsDeleted,
                         CreationDate = item.CreationDate.ToString()
@@ -54,7 +54,7 @@ namespace MB.Application
             var articleCategory = _articleCategoryRepository.Get(id);
             return new EditArticleCategory
             {
-                Id = articleCategory.ArticleId,
+                Id = articleCategory.ArticleCategoryId,
                 Title = articleCategory.Title
             };
         }

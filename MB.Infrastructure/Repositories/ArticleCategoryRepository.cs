@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using MB.Domain;
-using MB.Domain.ArticleCategoryAgg.Services;
-using Newtonsoft.Json.Bson;
 
 namespace MB.Infrastructure
 {
@@ -29,17 +26,17 @@ namespace MB.Infrastructure
 
         public ArticleCategory Get(int id)
         {
-            return _context.ArticleCategories.FirstOrDefault(x => x.ArticleId == id);
+            return _context.ArticleCategories.FirstOrDefault(x => x.ArticleCategoryId == id);
         }
 
         public void Save()
         {
             _context.SaveChanges();
         }
-
         public bool Exist(string title)
         {
             return _context.ArticleCategories.Any(x => x.Title == title);
         }
+
     }
 }

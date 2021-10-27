@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Metadata.Ecma335;
 
 namespace MB.Domain.ArticleAgg
 {
@@ -20,6 +21,7 @@ namespace MB.Domain.ArticleAgg
         }
         public Article(string title, string shortDescription, string pictureUrl, string body, int categoryId)
         {
+            Validator(title, categoryId);
             Title = title;
             ShortDescription = shortDescription;
             PictureUrl = pictureUrl;
@@ -29,6 +31,23 @@ namespace MB.Domain.ArticleAgg
             CreationTime = DateTime.Now;
         }
 
+        private static void Validator(string title, int categoryId)
+        {
+            if (string.IsNullOrEmpty(title))
+                throw new ArgumentNullException();
+            if (categoryId == 0)
+                throw new ArgumentOutOfRangeException();
+        }
+
+        public void Edit(string title, string shortDescription, string pictureUrl, string body, int categoryId)
+        {
+            Validator(title, categoryId);
+            Title = title;
+            ShortDescription = shortDescription;
+            PictureUrl = pictureUrl;
+            Body = body;
+            ArticleCategoryId = categoryId;
+        }
         public void Delete()
         {
             IsDeleted = true;

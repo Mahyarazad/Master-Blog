@@ -9,8 +9,7 @@ namespace MB.Application.Contracts.Article
         public string Title { get; set; }
         public string ShortDescription { get; set; }
         public string PictureUrl { get; set; }
-        public string Body { get; set; }
-        public DateTime CreationTime { get; set; }
+        public string CreationTime { get; set; }
         public bool IsDeleted { get; set; }
         public ArticleCategory ArticleCategory { get; set; }
     }

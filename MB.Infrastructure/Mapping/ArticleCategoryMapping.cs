@@ -15,7 +15,7 @@ namespace MB.Infrastructure.Mapping
         public void Configure(EntityTypeBuilder<ArticleCategory> builder)
         {
             builder.ToTable("ArticleCategories", schema: "dbo");
-            builder.HasKey(x => x.ArticleId);
+            builder.HasKey(x => x.ArticleCategoryId);
             builder.Property(x => x.Title);
             builder.Property(x => x.IsDeleted);
             builder.Property(x => x.CreationDate);

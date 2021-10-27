@@ -1,0 +1,72 @@
+﻿@page
+@model MB.Presentation.Razor.Areas.Administrator.Pages.ArticleManagement.IndexModel
+@{
+}
+<div class="text-center">
+    <div class="d-flex col-md-12 justify-content-between p-4" style="background-color: #e7e1e1">
+        <h1> Article </h1>
+        <a class="btn btn-success align-self-sm-center" asp-page="./Create"> Create a new article</a>
+    </div>
+    <div class="p-0">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Article Id</th>
+                    <th>Title</th>
+                    <th>PictureUrl</th>
+                    <th>Status</th>
+                    <th>Creation Date</th>
+                    <th>Manage</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in @Model.Articles)
+                {
+                    <tr>
+                        <td> @item.Id </td>
+                        <td> @item.Title</td>
+                        <td> @item.PictureUrl</td>
+                        <td>
+                            @if (item.IsDeleted)
+                            {
+                                <i class="fa fa-ban fa-2x text-danger"></i>
+                            }
+                            else
+                            {
+                                <i class="fa fa-check-square fa-2x text-success"></i>
+                            }
+                        </td>
+                        <td> @item.CreationTime</td>
+                        <td>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-warning mx-1" asp-page="./Edit" asp-route-id="@item.Id"> Modify</a>
+                                @if (item.IsDeleted)
+                                {
+                                    <form method="post" class="mx-1">
+                                        <button class="btn btn-success"
+                                                type="submit" asp-page-handler="Reactivate">
+                                            Reactivate
+                                        </button>
+                                        <input type="hidden" value="@item.Id" name="Id" />
+                                    </form>
+                                }
+                                else
+                                {
+
+                                    <form method="post" class="mx-1">
+                                        <button class="btn btn-danger"
+                                                type="submit" asp-page-handler="Delete">
+                                            Delete
+                                        </button>
+                                        <input type="hidden" value="@item.Id" name="Id" />
+                                    </form>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

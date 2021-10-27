@@ -19,9 +19,49 @@ namespace MB.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MB.Domain.ArticleCategory", b =>
+            modelBuilder.Entity("MB.Domain.ArticleAgg.Article", b =>
                 {
                     b.Property<int>("ArticleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ArticleCategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Body")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PictureUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShortDescription")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("ArticleId");
+
+                    b.HasIndex("ArticleCategoryId");
+
+                    b.ToTable("Article", "dbo");
+                });
+
+            modelBuilder.Entity("MB.Domain.ArticleCategory", b =>
+                {
+                    b.Property<int>("ArticleCategoryId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -35,9 +75,25 @@ namespace MB.Infrastructure.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ArticleId");
+                    b.HasKey("ArticleCategoryId");
 
                     b.ToTable("ArticleCategories", "dbo");
+                });
+
+            modelBuilder.Entity("MB.Domain.ArticleAgg.Article", b =>
+                {
+                    b.HasOne("MB.Domain.ArticleCategory", "ArticleCategory")
+                        .WithMany("Articles")
+                        .HasForeignKey("ArticleCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ArticleCategory");
+                });
+
+            modelBuilder.Entity("MB.Domain.ArticleCategory", b =>
+                {
+                    b.Navigation("Articles");
                 });
 #pragma warning restore 612, 618
         }

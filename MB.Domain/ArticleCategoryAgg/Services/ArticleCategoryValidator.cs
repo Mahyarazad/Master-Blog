@@ -9,7 +9,7 @@ namespace MB.Domain.ArticleCategoryAgg.Services
 
         public ArticleCategoryValidator(IArticleCategoryRepository articleCategoryRepository)
         {
-            articleCategoryRepository = _articleCategoryRepository;
+            _articleCategoryRepository = articleCategoryRepository;
         }
 
         public void CheckTheExistance(string title)
