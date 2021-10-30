@@ -1,0 +1,12 @@
+C:\Users\mhyri\source\repos\Master_Bloger\01_Framework\bin\Debug\net5.0\01_Framework.deps.json
+C:\Users\mhyri\source\repos\Master_Bloger\01_Framework\bin\Debug\net5.0\01_Framework.dll
+C:\Users\mhyri\source\repos\Master_Bloger\01_Framework\bin\Debug\net5.0\ref\01_Framework.dll
+C:\Users\mhyri\source\repos\Master_Bloger\01_Framework\bin\Debug\net5.0\01_Framework.pdb
+C:\Users\mhyri\source\repos\Master_Bloger\01_Framework\obj\Debug\net5.0\01_Framework.csprojAssemblyReference.cache
+C:\Users\mhyri\source\repos\Master_Bloger\01_Framework\obj\Debug\net5.0\01_Framework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mhyri\source\repos\Master_Bloger\01_Framework\obj\Debug\net5.0\01_Framework.AssemblyInfoInputs.cache
+C:\Users\mhyri\source\repos\Master_Bloger\01_Framework\obj\Debug\net5.0\01_Framework.AssemblyInfo.cs
+C:\Users\mhyri\source\repos\Master_Bloger\01_Framework\obj\Debug\net5.0\01_Framework.csproj.CoreCompileInputs.cache
+C:\Users\mhyri\source\repos\Master_Bloger\01_Framework\obj\Debug\net5.0\01_Framework.dll
+C:\Users\mhyri\source\repos\Master_Bloger\01_Framework\obj\Debug\net5.0\ref\01_Framework.dll
+C:\Users\mhyri\source\repos\Master_Bloger\01_Framework\obj\Debug\net5.0\01_Framework.pdb

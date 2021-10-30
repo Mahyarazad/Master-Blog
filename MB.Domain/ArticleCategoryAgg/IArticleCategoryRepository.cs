@@ -1,13 +1,10 @@
 ﻿using System.Collections.Generic;
+using _01_Framework.Repository;
 
 namespace MB.Domain
 {
-    public interface IArticleCategoryRepository
+    public interface IArticleCategoryRepository : IRepository<int, ArticleCategory>
     {
-        void Create(ArticleCategory entity);
-        List<ArticleCategory> GetAll();
-        ArticleCategory Get(int id);
-        void Save();
         bool Exist(string title);
     }
 }

@@ -1,12 +1,70 @@
 ﻿@page "{id:int}"
+@using MB.Domain.CommentAgg
 @model MB.Presentation.Razor.Pages.ArticleDetailModel
 @{
 }
 
-<div class="jumbotron-fluid">
-    <h6 class="display-4 row p-4 col-12 justify-content-center"> @Model.Article.Title</h6>
-    <img class="row col-12"src="@Model.Article.PictureUrl" alt="@Model.Article.Title" title="@Model.Article.Title"/>
-    <span class="row px-3 text-secondary">@Model.Article.CreationTime</span>
-    <span class="row px-3 text-big text-dark"> @Model.Article.ArticleCategory.Title</span>
-    <p class="p-4 text-monospace col-12">@Model.Article.Body</p>
+<div class="col-12">
+    <div class="col-12 justify-content-center">
+        <h6 class="h3 row p-4 col-12"> @Model.Article.Title</h6>
+        <img class="row col-12"src="@Model.Article.PictureUrl" alt="@Model.Article.Title" title="@Model.Article.Title"/>
+    </div>
+    <div class="px-3 text-secondary col-2">
+        <small >@Model.Article.CreationTime</small>
+        <strong > @Model.Article.ArticleCategory.Title</strong>
+    </div>
+    <div class="px-0 py-2 col-12 text-big">
+        <p>@Model.Article.Body</p>
+    </div>
+</div>
+<div class="col-12">
+    <div class="py-2 my-2 px-1">
+        <strong> Posted Comments: </strong>
+        <strong> @Model.Article.Comments.Count(x => x.Status == StatusHelper.Confirmed)</strong>
+    </div>
+    @foreach (var item in Model.Article.Comments)
+    {
+        if (item.Status == 1)
+        {
+            <div class="border-top border-bottom col-12">
+                <div class="col-12 px-0 py-2">
+                    <div class="col-12">
+                        <img src="~/img/user-png.png" style="width: 5% !important;" />
+                        <strong>@item.Name</strong>
+                    </div>
+                    <div class="col-12 text-gray">
+                        <small> @item.CreationTime</small>
+                    </div>
+                    <div class="col-12">
+                        <p>@item.Message</p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+
+<div class="col-12 p-2">
+    <header>
+        <h3 class="h6 px-2"> Leave a reply </h3>
+    </header>
+    <form method="post">
+        <div class="row">
+            <div class="form-group col-12">
+                <input type="hidden" name="ArticleId" value="@Model.Article.Id"
+                       />
+            </div>
+            <div class="form-group col-6">
+                <input class="col-12" style="border-width: 0 0 1px;" type="text" name="Name" placeholder="Name"/>
+            </div>
+            <div class="form-group col-6">
+                <input class="col-12" style="border-width: 0 0 1px;" type="email" name="Email" placeholder="Email Address"/>
+            </div>
+            <div class="form-group col-12">
+                <textarea placeholder="Type a comment" rows="5" class="col-12" style="border-width: 0 0 1px;" type="text" name="Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-secondary mx-3 mb-3">Submit</button>
+        </div>
+    </form>
 </div>

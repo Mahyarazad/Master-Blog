@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using MB.Infrastructure;
@@ -17,16 +18,19 @@ namespace MB.Application.Contracts.Article
 
         public ArticleQueryView Get(int id)
         {
-            return _mbContext.Articles.Include(x => x.ArticleCategory)
+            return _mbContext.Articles
+                .Include(x => x.ArticleCategory)
+                .Include(x => x.Comments)
                 .Select(x => new ArticleQueryView
                 {
-                    Id = x.ArticleId,
+                    Id = x.Id,
                     Body = x.Body,
                     PictureUrl = x.PictureUrl,
                     CreationTime = x.CreationTime.ToString(CultureInfo.CurrentCulture),
                     ShortDescription = x.ShortDescription,
                     Title = x.Title,
-                    ArticleCategory = x.ArticleCategory
+                    ArticleCategory = x.ArticleCategory,
+                    Comments = x.Comments
                 }).FirstOrDefault(x => x.Id == id);
         }
     }

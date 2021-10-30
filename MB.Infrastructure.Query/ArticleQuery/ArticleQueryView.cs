@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MB.Domain;
 
 namespace MB.Application.Contracts.Article
@@ -13,5 +14,6 @@ namespace MB.Application.Contracts.Article
         public string Body { get; set; }
         public bool IsDeleted { get; set; }
         public ArticleCategory ArticleCategory { get; set; }
+        public ICollection<Domain.CommentAgg.Comment> Comments { get; set; }
     }
 }

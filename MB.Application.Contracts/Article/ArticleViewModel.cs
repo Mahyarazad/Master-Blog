@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MB.Application.Contracts.Article
 {
@@ -13,5 +14,6 @@ namespace MB.Application.Contracts.Article
         public int ArticleCategoryId { get; set; }
         public string ArticleCategory { get; set; }
         public string Body { get; set; }
+        public int Comments { get; set; }
     }
 }

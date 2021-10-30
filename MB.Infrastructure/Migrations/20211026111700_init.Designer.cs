@@ -68,7 +68,7 @@ namespace MB.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreationDate")
+                    b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsDeleted")

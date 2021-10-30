@@ -1,20 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
+using _01_Framework;
+using MB.Domain.CommentAgg;
 
 namespace MB.Domain.ArticleAgg
 {
-    public class Article
+    public class Article : DomainBase<int>
     {
-        public int ArticleId { get; private set; }
         public string Title { get; private set; }
         public string ShortDescription { get; private set; }
         public string PictureUrl { get; private set; }
         public string Body { get; private set; }
-        public DateTime CreationTime { get; private set; }
         public bool IsDeleted { get; private set; }
         public int ArticleCategoryId { get; private set; }
         public ArticleCategory ArticleCategory { get; private set; }
-
+        public ICollection<Comment> Comments { get; private set; }
         protected Article()
         {
 
@@ -28,7 +29,7 @@ namespace MB.Domain.ArticleAgg
             Body = body;
             ArticleCategoryId = categoryId;
             IsDeleted = false;
-            CreationTime = DateTime.Now;
+            Comments = new List<Comment>();
         }
 
         private static void Validator(string title, int categoryId)

@@ -20,3 +20,5 @@ C:\Users\mhyri\source\repos\Master_Bloger\MB.Infrastructure\bin\Debug\net5.0\MB.
 C:\Users\mhyri\source\repos\Master_Bloger\MB.Infrastructure\bin\Debug\net5.0\MB.Application.dll
 C:\Users\mhyri\source\repos\Master_Bloger\MB.Infrastructure\bin\Debug\net5.0\MB.Application.Contracts.pdb
 C:\Users\mhyri\source\repos\Master_Bloger\MB.Infrastructure\bin\Debug\net5.0\MB.Application.pdb
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Infrastructure\bin\Debug\net5.0\01_Framework.dll
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Infrastructure\bin\Debug\net5.0\01_Framework.pdb

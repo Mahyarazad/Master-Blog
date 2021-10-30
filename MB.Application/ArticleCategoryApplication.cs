@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _01_Framework.Repository;
 using MB.Application.Contracts;
 using MB.Domain;
 using MB.Domain.ArticleCategoryAgg.Services;
@@ -10,11 +11,14 @@ namespace MB.Application
     {
         private readonly IArticleCategoryRepository _articleCategoryRepository;
         private readonly IArticleCategoryValidator _articleCategoryValidator;
+        private readonly IUnitofWork _unitofWork;
         public ArticleCategoryApplication(IArticleCategoryRepository articleCategoryRepository,
-            IArticleCategoryValidator articleCategoryValidator)
+            IArticleCategoryValidator articleCategoryValidator,
+            IUnitofWork unitofWork)
         {
             _articleCategoryRepository = articleCategoryRepository;
             _articleCategoryValidator = articleCategoryValidator;
+            _unitofWork = unitofWork;
         }
 
         public List<ArticleCategoryViewModel> List()
@@ -26,10 +30,10 @@ namespace MB.Application
                 articlesViewModel.Add(
                     new ArticleCategoryViewModel
                     {
-                        Id = item.ArticleCategoryId,
+                        Id = item.Id,
                         Title = item.Title,
                         IsDeleted = item.IsDeleted,
-                        CreationDate = item.CreationDate.ToString()
+                        CreationDate = item.CreationTime.ToString()
                     });
             }
 
@@ -38,15 +42,18 @@ namespace MB.Application
 
         public void Create(CreateArticleCategory commad)
         {
+            _unitofWork.BeginTransaction();
             var article = new ArticleCategory(commad.Title, _articleCategoryValidator);
-            _articleCategoryRepository.Create(article);
+            _articleCategoryRepository.CreateAndSave(article);
+            _unitofWork.CommitTransaction();
         }
 
         public void Edit(EditArticleCategory command)
         {
+            _unitofWork.BeginTransaction();
             var article = _articleCategoryRepository.Get(command.Id);
             article.EditTitle(command.Title);
-            _articleCategoryRepository.Save();
+            _unitofWork.CommitTransaction();
         }
 
         public EditArticleCategory Get(int id)
@@ -54,23 +61,25 @@ namespace MB.Application
             var articleCategory = _articleCategoryRepository.Get(id);
             return new EditArticleCategory
             {
-                Id = articleCategory.ArticleCategoryId,
+                Id = articleCategory.Id,
                 Title = articleCategory.Title
             };
         }
 
         public void Delete(int id)
         {
+            _unitofWork.BeginTransaction();
             var article = _articleCategoryRepository.Get(id);
             article.Delete();
-            _articleCategoryRepository.Save();
+            _unitofWork.CommitTransaction();
         }
 
         public void Reactivate(int id)
         {
+            _unitofWork.BeginTransaction();
             var article = _articleCategoryRepository.Get(id);
             article.Reactivate();
-            _articleCategoryRepository.Save();
+            _unitofWork.CommitTransaction();
         }
     }
 }

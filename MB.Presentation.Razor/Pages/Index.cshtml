@@ -33,8 +33,12 @@
                         <p class="text-monospace">
                             @article.ShortDescription
                         </p>
+                        @*<span> @article.ArticleCategory</span>*@
                         <footer class="post-footer d-flex align-items-center">
-                            <div class="comments meta-last"><i class="icon-comment"></i></div>
+                            <div class="comments meta-last">
+                                <i class="icon-comment"></i>
+                                <span class="text-info">@article.Comments</span>
+                            </div>
                         </footer>
                     </div>
                 </div>

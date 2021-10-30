@@ -1,13 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using _01_Framework.Repository;
 using MB.Domain;
 
 namespace MB.Infrastructure
 {
-    public class ArticleCategoryRepository : IArticleCategoryRepository
+    public class ArticleCategoryRepository : BaseRepository<int, ArticleCategory>, IArticleCategoryRepository
     {
         private readonly MBContext _context;
-        public ArticleCategoryRepository(MBContext context)
+        public ArticleCategoryRepository(MBContext context) : base(context)
         {
             _context = context;
         }
@@ -15,28 +18,12 @@ namespace MB.Infrastructure
         public void Create(ArticleCategory entity)
         {
             _context.ArticleCategories.Add(entity);
-            Save();
-
         }
 
-        public List<ArticleCategory> GetAll()
-        {
-            return _context.ArticleCategories.OrderByDescending(x => x.ArticleCategoryId).ToList();
-        }
 
-        public ArticleCategory Get(int id)
-        {
-            return _context.ArticleCategories.FirstOrDefault(x => x.ArticleCategoryId == id);
-        }
-
-        public void Save()
-        {
-            _context.SaveChanges();
-        }
         public bool Exist(string title)
         {
             return _context.ArticleCategories.Any(x => x.Title == title);
         }
-
     }
 }

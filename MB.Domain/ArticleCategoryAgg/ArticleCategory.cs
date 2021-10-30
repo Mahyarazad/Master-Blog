@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using _01_Framework;
 using MB.Domain.ArticleAgg;
 using MB.Domain.ArticleCategoryAgg.Services;
 
 namespace MB.Domain
 {
-    public class ArticleCategory
+    public class ArticleCategory : DomainBase<int>
     {
         protected ArticleCategory()
         {
@@ -17,14 +18,11 @@ namespace MB.Domain
             validatorService.CheckTheExistance(title);
             Title = title;
             IsDeleted = false;
-            CreationDate = DateTime.Now;
             Articles = new List<Article>();
         }
 
-        public int ArticleCategoryId { get; private set; }
         public string Title { get; private set; }
         public bool IsDeleted { get; private set; }
-        public DateTime CreationDate { get; private set; }
         public ICollection<Article> Articles { get; set; }
         public void GaurdAgaintEmptyAndNull(string title)
         {

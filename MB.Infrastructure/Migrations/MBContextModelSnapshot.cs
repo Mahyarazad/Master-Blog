@@ -21,7 +21,7 @@ namespace MB.Infrastructure.Migrations
 
             modelBuilder.Entity("MB.Domain.ArticleAgg.Article", b =>
                 {
-                    b.Property<int>("ArticleId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -44,15 +44,15 @@ namespace MB.Infrastructure.Migrations
 
                     b.Property<string>("ShortDescription")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.HasKey("ArticleId");
+                    b.HasKey("Id");
 
                     b.HasIndex("ArticleCategoryId");
 
@@ -61,12 +61,12 @@ namespace MB.Infrastructure.Migrations
 
             modelBuilder.Entity("MB.Domain.ArticleCategory", b =>
                 {
-                    b.Property<int>("ArticleCategoryId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreationDate")
+                    b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsDeleted")
@@ -75,9 +75,46 @@ namespace MB.Infrastructure.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ArticleCategoryId");
+                    b.HasKey("Id");
 
                     b.ToTable("ArticleCategories", "dbo");
+                });
+
+            modelBuilder.Entity("MB.Domain.CommentAgg.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ArticleId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("Status")
+                        .HasMaxLength(1)
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticleId");
+
+                    b.ToTable("Comments", "dbo");
                 });
 
             modelBuilder.Entity("MB.Domain.ArticleAgg.Article", b =>
@@ -89,6 +126,22 @@ namespace MB.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("ArticleCategory");
+                });
+
+            modelBuilder.Entity("MB.Domain.CommentAgg.Comment", b =>
+                {
+                    b.HasOne("MB.Domain.ArticleAgg.Article", "Article")
+                        .WithMany("Comments")
+                        .HasForeignKey("ArticleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Article");
+                });
+
+            modelBuilder.Entity("MB.Domain.ArticleAgg.Article", b =>
+                {
+                    b.Navigation("Comments");
                 });
 
             modelBuilder.Entity("MB.Domain.ArticleCategory", b =>

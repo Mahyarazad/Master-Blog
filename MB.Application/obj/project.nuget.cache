@@ -1,8 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "B9lA/mevm00/Ac3+ml7bxcqfu2+rIHpm1YEFIvbG9Ocg2niIrfx46oM0OPR4FxH/MdbLHCNZBgd9S4Gwl09m6A==",
+  "dgSpecHash": "yAUk86OWNpW3BN4tL/QY2je1P4hYekSwTwC1qCe+sg7wYxKOxvzNsW6eh6HPNXq5cCDfVdp3QSsh4HQduMHCYg==",
   "success": true,
   "projectFilePath": "C:\\Users\\mhyri\\source\\repos\\Master_Bloger\\MB.Application\\MB.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mhyri\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.11\\microsoft.entityframeworkcore.5.0.11.nupkg.sha512",
+    "C:\\Users\\mhyri\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.11\\microsoft.entityframeworkcore.abstractions.5.0.11.nupkg.sha512",
+    "C:\\Users\\mhyri\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.11\\microsoft.entityframeworkcore.analyzers.5.0.11.nupkg.sha512",
+    "C:\\Users\\mhyri\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\mhyri\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
+    "C:\\Users\\mhyri\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
+    "C:\\Users\\mhyri\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\mhyri\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\mhyri\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\mhyri\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\mhyri\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\mhyri\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
+    "C:\\Users\\mhyri\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\mhyri\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

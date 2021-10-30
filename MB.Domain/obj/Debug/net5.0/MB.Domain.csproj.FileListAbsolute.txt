@@ -13,3 +13,5 @@ C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\obj\Debug\net5.0\MB.Domain.p
 C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\bin\Debug\net5.0\MB.Application.Contracts.dll
 C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\bin\Debug\net5.0\MB.Application.Contracts.pdb
 C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\obj\Debug\net5.0\MB.Domain.csproj.CopyComplete
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\bin\Debug\net5.0\01_Framework.dll
+C:\Users\mhyri\source\repos\Master_Bloger\MB.Domain\bin\Debug\net5.0\01_Framework.pdb

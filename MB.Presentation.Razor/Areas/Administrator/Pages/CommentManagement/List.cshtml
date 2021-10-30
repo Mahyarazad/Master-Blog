@@ -1,0 +1,64 @@
+﻿@page
+@model MB.Presentation.Razor.Areas.Administrator.Pages.CommentManagement.ListModel
+@{
+}
+<div class="text-center">
+    <div class="d-flex col-md-12 justify-content-between p-4" style="background-color: #e7e1e1">
+        <h1> Comments </h1>
+    </div>
+    <div class="p-0">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="text-nowrap">
+                    <th>Article</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Status</th>
+                    <th>Creation Date</th>
+                    <th>Manage</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in @Model.Comments)
+                {
+                <tr>
+                    <td> @item.Article </td>
+                    <td> @item.Name</td>
+                    <td> @item.Email</td>
+                    <td> @item.Message</td>
+                    <td>
+                        @if (item.Status == 0)
+                        {
+                            <i class="fa fa-eye-slash fa-2x"></i>
+                        }
+                        else if (item.Status == 1)
+                        {
+                            <i class="fa fa-check fa-2x text-success"></i>
+                        }
+                        else
+                        {
+                            <i class="fa fa-close fa-2x text-danger"></i>
+                        }
+                    </td>
+
+                    <td> @item.CreationDate</td>
+                    <td>
+                        <div class="d-flex justify-content-center">
+                            <form method="post">
+                                <input type="hidden" value="@item.Id" name="Id" />
+                                <button class="btn btn-success mx-1" asp-page-handler="Confirm"> Confirm </button>
+                            </form>
+                            <form method="post">
+                                <input type="hidden" value="@item.Id" name="Id" />
+                                <button class="btn btn-danger mx-1" asp-page-handler="Cancel"> Cancel </button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

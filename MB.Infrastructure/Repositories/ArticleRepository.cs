@@ -1,51 +1,42 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Linq.Expressions;
+using _01_Framework;
+using _01_Framework.Repository;
 using MB.Application.Contracts.Article;
 using MB.Domain.ArticleAgg;
+using MB.Domain.CommentAgg;
 using Microsoft.EntityFrameworkCore;
 
 namespace MB.Infrastructure
 {
-    public class ArticleRepository : IArticleRepository
+    public class ArticleRepository : BaseRepository<int, Article>, IArticleRepository
     {
         private readonly MBContext _mbContext;
-
-        public ArticleRepository(MBContext mbContext)
+        public ArticleRepository(MBContext dbContext) : base(dbContext)
         {
-            _mbContext = mbContext;
+            _mbContext = dbContext;
         }
 
-        public void CreateAndSave(Article entity)
+        public List<ArticleViewModel> GetList()
         {
-            _mbContext.Add(entity);
-            Save();
-        }
-
-        public List<ArticleViewModel> GetAll()
-        {
-            return _mbContext.Articles.Include(x => x.ArticleCategory)
+            return _mbContext.Articles
+                .Include(x => x.ArticleCategory)
+                .Include(x => x.Comments)
                 .Select(x => new ArticleViewModel
                 {
-                    Id = x.ArticleId,
+                    Id = x.Id,
                     Title = x.Title,
                     ShortDescription = x.ShortDescription,
                     PictureUrl = x.PictureUrl,
                     CreationTime = x.CreationTime.ToString(CultureInfo.CurrentCulture),
                     IsDeleted = x.IsDeleted,
-                    ArticleCategory = x.ArticleCategory.Title
+                    ArticleCategory = x.ArticleCategory.Title,
+                    Comments = x.Comments.Count(x => x.Status == StatusHelper.Confirmed)
                 })
                 .OrderByDescending(x => x.Id).ToList();
-        }
-
-        public Article Get(int id)
-        {
-            return _mbContext.Articles.FirstOrDefault(x => x.ArticleId == id);
-        }
-
-        public void Save()
-        {
-            _mbContext.SaveChanges();
         }
 
         public bool Exist(string title)
